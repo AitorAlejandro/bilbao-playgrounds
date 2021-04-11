@@ -7,7 +7,7 @@ export function Playground({ slug, title }) {
         <article className="overflow-hidden rounded-lg shadow-lg">
           <img
             className="w-full h-64 object-cover object-center"
-            src="https://via.placeholder.com/300"
+            src="https://picsum.photos/400/400/?random"
             alt=""
           />
           <div className="flex items-center justify-between leading-tight p-2 md:p-4">
