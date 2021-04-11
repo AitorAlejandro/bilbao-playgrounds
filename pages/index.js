@@ -14,7 +14,6 @@ export async function getStaticProps() {
 }
 
 export default function Playgrounds({ playgrounds }) {
-  console.log(playgrounds);
   return (
     <div className="container mx-auto">
       {playgrounds.map(({ fields, sys }) => (
