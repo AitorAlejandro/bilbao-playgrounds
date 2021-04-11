@@ -1,6 +1,8 @@
 import { getContentfulClient } from "../core/infrastructure";
 import { fetchPlaygrounds } from "../core/application";
 
+import { Playground } from "../components";
+
 export async function getStaticProps() {
   const response = await fetchPlaygrounds(getContentfulClient());
 
@@ -14,11 +16,9 @@ export async function getStaticProps() {
 export default function Playgrounds({ playgrounds }) {
   console.log(playgrounds);
   return (
-    <div>
+    <div className="container mx-auto">
       {playgrounds.map(({ fields, sys }) => (
-        <div key={sys.id}>
-          <div>{fields.title}</div>
-        </div>
+        <Playground key={sys.id} title={fields.title} slug={fields.slug} />
       ))}
     </div>
   );
