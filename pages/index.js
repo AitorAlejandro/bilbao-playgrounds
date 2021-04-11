@@ -15,10 +15,12 @@ export async function getStaticProps() {
 
 export default function Playgrounds({ playgrounds }) {
   return (
-    <div className="container mx-auto">
-      {playgrounds.map(({ fields, sys }) => (
-        <Playground key={sys.id} title={fields.title} slug={fields.slug} />
-      ))}
+    <div className="container mx-auto my-12">
+      <div className="flex flex-wrap -mx-1 lg:-mx-4">
+        {playgrounds.map(({ fields, sys }) => (
+          <Playground key={sys.id} title={fields.title} slug={fields.slug} />
+        ))}
+      </div>
     </div>
   );
 }
