@@ -1,8 +1,9 @@
 import Link from "next/link";
+import { Footer } from "../../components";
 
 export function Layout({ children }) {
   return (
-    <div className="layout">
+    <div>
       <header>
         <Link href="/">
           <a>
@@ -14,9 +15,7 @@ export function Layout({ children }) {
 
       <div>{children}</div>
 
-      <footer>
-        <p>Copyright 2021 Bilbao Playgrounds :)</p>
-      </footer>
+      <Footer />
     </div>
   );
 }
