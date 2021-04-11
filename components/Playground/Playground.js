@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import Link from "next/link";
 
 export function Playground({ slug, title }) {
@@ -18,3 +19,8 @@ export function Playground({ slug, title }) {
     </Link>
   );
 }
+
+Playground.propTypes = {
+  slug: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};
