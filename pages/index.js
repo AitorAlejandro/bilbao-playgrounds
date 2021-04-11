@@ -13,5 +13,13 @@ export async function getStaticProps() {
 
 export default function Playgrounds({ playgrounds }) {
   console.log(playgrounds);
-  return <div>Playgrounds List</div>;
+  return (
+    <div>
+      {playgrounds.map(({ fields, sys }) => (
+        <div key={sys.id}>
+          <div>{fields.title}</div>
+        </div>
+      ))}
+    </div>
+  );
 }
