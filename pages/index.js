@@ -1,10 +1,10 @@
-import { getContentfulClient } from "../core/infrastructure";
+import { contentfulRepository } from "../core/infrastructure";
 import { fetchPlaygrounds } from "../core/application";
 
 import { Playground } from "../components";
 
 export async function getStaticProps() {
-  const response = await fetchPlaygrounds(getContentfulClient());
+  const response = await fetchPlaygrounds(contentfulRepository);
 
   return {
     props: {

@@ -1,1 +1,1 @@
-export * from "./getContentfulClient";
+export { contentfulRepository } from "./ContentfulRepository";

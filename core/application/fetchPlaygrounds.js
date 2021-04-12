@@ -1,4 +1,4 @@
-export async function fetchPlaygrounds(client) {
-  const response = await client.getEntries({ content_type: "playground" });
+export async function fetchPlaygrounds(repository) {
+  const response = await repository.fetchPlaygrounds();
   return response;
 }
