@@ -16,7 +16,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 }
 
@@ -25,7 +25,14 @@ export async function getStaticProps({ params }) {
     contentfulRepository,
     params.slug
   );
-
+  if (response && response.items && response.items.length === 0) {
+    return {
+      redirect: {
+        destination: "/",
+        permanent: false,
+      },
+    };
+  }
   return {
     props: {
       playground: response.items[0],
@@ -35,5 +42,7 @@ export async function getStaticProps({ params }) {
 }
 
 export default function PlaygroundDetails({ playground }) {
+  if (!playground) return <div>Loading ...</div>;
+
   return <div>Playground Details {JSON.stringify(playground)}</div>;
 }
