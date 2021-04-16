@@ -1,5 +1,6 @@
 import { contentfulRepository } from "../../core/infrastructure";
 import {
+  constants,
   fetchPlaygrounds,
   fetchPlaygroundBySlug,
 } from "../../core/application";
@@ -28,6 +29,7 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       playground: response.items[0],
+      revalidate: constants.REVALIDATE_TIME,
     },
   };
 }
